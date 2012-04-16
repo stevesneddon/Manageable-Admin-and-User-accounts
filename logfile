@@ -11,3 +11,11 @@ LOG:  database system is shut down
 LOG:  database system was shut down at 2012-04-15 15:04:52 PDT
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2012-04-15 23:18:37 PDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
