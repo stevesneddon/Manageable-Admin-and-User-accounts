@@ -1,3 +1,4 @@
+<% provide(:title, 'About Us') %>
 <div class="center hero-unit">
   <h1>About LoboBlanca.org</h1>
 
@@ -16,7 +17,7 @@
 	by taking vigorous actions to support the wolf in its battle against human aggression.</li>
   </ol>
   </h3>
-  <%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
 </div>
 
 <%= link_to image_tag("LoboBlanca.png", alt: "LoboBlanca"), 'http://loboblanca.herokuapp.com/' %>
