@@ -1,0 +1,13 @@
+LOG:  database system was shut down at 2012-04-15 14:48:49 PDT
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
+FATAL:  database "user_admin_development" does not exist
+FATAL:  database "user_admin_development" does not exist
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2012-04-15 15:04:52 PDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
