@@ -42,3 +42,5 @@ ERROR:  null value in column "id" violates not-null constraint
 STATEMENT:  insert into "public"."testme" ( "name") values ( 'foo')
 ERROR:  cannot drop a template database
 STATEMENT:  DROP DATABASE IF EXISTS "template1"
+ERROR:  cannot drop a template database
+STATEMENT:  DROP DATABASE IF EXISTS "template1"

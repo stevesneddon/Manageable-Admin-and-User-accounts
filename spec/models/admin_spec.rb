@@ -12,12 +12,18 @@
 require 'spec_helper'
 
 describe Admin do
-  before { @admin = Admin.new(name: "Example Admin", email: "admin@example.com") }
-
+  before do
+    @admin = Admin.new(name: "Example User", email: "user@example.com", 
+                     password: "foobar", password_confirmation: "foobar")
+  end
+  
   subject { @admin }
 
   it { should respond_to(:name) }
   it { should respond_to(:email) }
+  it { should respond_to(:password_digest) }
+  it { should respond_to(:password) }
+  it { should respond_to(:password_confirmation) }
 
   it { should be_valid }
 
@@ -63,6 +69,21 @@ describe Admin do
       admin_with_same_email.save
     end
 
+    it { should_not be_valid }
+  end
+  
+  describe "when password is not present" do
+    before { @admin.password = @admin.password_confirmation = " " }
+    it { should_not be_valid }
+  end
+
+  describe "when password doesn't match confirmation" do
+    before { @admin.password_confirmation = "mismatch" }
+    it { should_not be_valid }
+  end
+
+  describe "when password confirmation is nil" do
+    before { @admin.password_confirmation = nil }
     it { should_not be_valid }
   end
 end
