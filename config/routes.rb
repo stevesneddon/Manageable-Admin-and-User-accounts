@@ -1,12 +1,11 @@
 UserAdmin::Application.routes.draw do
-  get "admins/new"
-
-  get "users/new"
+  resources :users, :admins
 
   root to: 'static_pages#home'
   
   match '/signup',  to: 'users#new'
-  match '/admin',   to: 'admins#new'
+  
+  match '/newops',   to: 'admins#new'
   
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'

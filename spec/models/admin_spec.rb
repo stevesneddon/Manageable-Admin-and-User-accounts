@@ -44,7 +44,7 @@ describe Admin do
 
   describe "when email format is invalid" do
     it "should be invalid" do
-      addresses = %w[admin@foo,com user_at_foo.org example.admin@foo.]
+      addresses = %w[admin@foo,com admin_at_foo.org example.admin@foo.]
       addresses.each do |invalid_address|
         @admin.email = invalid_address
         @admin.should_not be_valid
