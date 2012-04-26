@@ -1,2 +1,12 @@
 <% provide(:title, @admin.name) %>
-<h1><%= @admin.name %></h1>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @admin %>
+        <%= @admin.name %>
+        <br><%= @admin.email %>
+      </h1>
+    </section>
+  </aside>
+</div>
