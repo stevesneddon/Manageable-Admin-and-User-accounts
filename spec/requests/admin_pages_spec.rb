@@ -25,7 +25,14 @@ describe "Admin pages" do
     let(:submit) { "Create my account" }
 
     describe "with invalid information" do
-      it "should not create a user" do
+# New
+      describe "error messages" do
+        before { click_button submit }
+
+        it { should have_selector('title', text: 'Admin Sign up') }
+        it { should have_content('error') }
+      end
+      it "should not create an admin" do
         expect { click_button submit }.not_to change(Admin, :count)
       end
     end
@@ -37,6 +44,16 @@ describe "Admin pages" do
         fill_in "Password",     with: "foobarbaz"
         fill_in "Confirmation", with: "foobarbaz"
       end
+# New
+
+      describe "after saving the user" do
+          before { click_button submit }
+          let(:user) { User.find_by_email('user@example.com') }
+
+          it { should have_selector('title', text: user.name) }
+          it { should have_selector('div.alert.alert-success', text: 'Welcome') }
+          it { should have_link('Sign out') }
+        end
 
       it "should create a user" do
         expect { click_button submit }.to change(Admin, :count).by(1)

@@ -9,6 +9,7 @@ class AdminsController < ApplicationController
   def create
     @admin = Admin.new(params[:admin])
     if @admin.save
+      # sign_in @user -- see sessions_controller.rb
       flash[:success] = "Welcome to LoboBlanca.org!"
       redirect_to @admin
     else
