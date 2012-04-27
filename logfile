@@ -44,3 +44,15 @@ ERROR:  cannot drop a template database
 STATEMENT:  DROP DATABASE IF EXISTS "template1"
 ERROR:  cannot drop a template database
 STATEMENT:  DROP DATABASE IF EXISTS "template1"
+ERROR:  cannot drop a template database
+STATEMENT:  DROP DATABASE IF EXISTS "template1"
+ERROR:  cannot drop a template database
+STATEMENT:  DROP DATABASE IF EXISTS "template1"
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2012-04-26 20:24:59 PDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
