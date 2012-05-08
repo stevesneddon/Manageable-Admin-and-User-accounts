@@ -1,4 +1,9 @@
 class AdminsController < ApplicationController
+
+  def index
+  #
+  end
+
   def show
     @admin = Admin.find(params[:id])
   end
@@ -6,6 +11,7 @@ class AdminsController < ApplicationController
   def new
     @admin = Admin.new
   end
+  
   def create
     @admin = Admin.new(params[:admin])
     if @admin.save
@@ -16,4 +22,23 @@ class AdminsController < ApplicationController
       render 'new'
     end
   end
+  
+  def edit
+    @admin = Admin.find(params[:id])
+  end
+  
+    def update
+      @admin = Admin.find(params[:id])
+      if @admin.update_attributes(params[:admin])
+        flash[:success] = "Admin info updated"
+        # sign_in @user
+        redirect_to @admin
+      else
+        render 'edit'
+      end
+    end
+
+    def destroy
+  #
+    end
 end
